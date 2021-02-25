@@ -1,4 +1,5 @@
-import re
+import re, os
+from pathlib import Path
 
 def input_url():
 
@@ -12,12 +13,14 @@ def print_status(object):
     print("Your anime downloads directory:",object.save_dir)
     print("Anime Name:",object.anime_name)
     print("Status:",object.status)
+    print()
 
 def print_latest(object):
 
     print()
     print(object.episode,"[{}]".format(object.upload_date))
     print(object.episode_link)
+    print()
 
 def request_purify(string):
 
@@ -32,3 +35,7 @@ def string_machine(int_list):
     string = ", ".join(str_list[-1]) + ", & " + str_list[-1]
 
     return string
+
+def open_folder(object):
+
+    os.startfile(Path(object.save_dir,object.anime_name))

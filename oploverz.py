@@ -65,9 +65,11 @@ class OPBot(ZippyBot):
         print(filename)
 
         self.create_folder()
-        save_dir = Path(self.save_dir,self.anime_name)
+        save_dir = Path(self.save_dir,self.anime_name,filename)
         
-        wget.download(dl_link,str(Path(save_dir,filename)))
+        wget.download(dl_link, str(save_dir))
+
+        print()
 
     def get_all_episodes(self, url):
 

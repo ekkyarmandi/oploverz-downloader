@@ -65,6 +65,9 @@ while True:
 
         print("All videos downloaded succesfully!")
 
+        # open the download folder
+        menu.open_folder(bot)
+
     if cmd == "download episode":
 
         # make sure the url inserted
@@ -85,6 +88,9 @@ while True:
             bot.download(links[i])
 
         print("Episode(s):", menu.string_machine(request), "has been downloaded!")
+
+        # open the download folder
+        menu.open_folder(bot)
     
     if cmd == "status":
         if url == "":
@@ -92,7 +98,6 @@ while True:
             bot.get_info(url)
         else:
             bot.get_info(url)
-
 
         menu.print_status(bot)
 
