@@ -45,10 +45,11 @@ class OPBot(ZippyBot):
 
         self.episode = episode
         self.upload_date = upload_date
-
         self.episode_link = episode_link
 
-    def download(self):
+        return episode_link
+
+    def download(self, episode_link):
 
         def file_title(filename):
             filename = filename.replace("%20", " ")
@@ -56,7 +57,7 @@ class OPBot(ZippyBot):
             filename = filename.replace("%5b", "[")
             return filename
         
-        zippy_link = self.get_zippy_link(self.episode_link)
+        zippy_link = self.get_zippy_link(episode_link)
         dl_link = self.get_zippy_download(zippy_link)
 
         filename = wget.detect_filename(dl_link)
@@ -67,3 +68,15 @@ class OPBot(ZippyBot):
         save_dir = Path(self.save_dir,self.anime_name)
         
         wget.download(dl_link,str(Path(save_dir,filename)))
+
+    def get_all_episodes(self, url):
+
+        soups = self.page_renderer(url)
+        episodes = soups.find("div", {"class":"episodelist"}).find("ul")
+
+        episode_links = [episode.find("span", {"class":"leftoff"}).find("a")["href"] for episode in episodes]
+        episode_links.reverse()
+
+        episode_links = {key:value for key, value in zip(range(1,len(episode_links)+1), episode_links)}
+
+        return episode_links
