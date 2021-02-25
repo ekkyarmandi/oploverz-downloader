@@ -37,6 +37,8 @@ while True:
         if url == "":
             url = menu.input_url()
             bot.get_info(url)
+        else:
+            bot.get_info(url)
 
         episode_link = bot.latest_update(url)
         menu.print_latest(bot)
@@ -50,6 +52,8 @@ while True:
         # get the url first
         if url == "":
             url = menu.input_url()
+            bot.get_info(url)
+        else:
             bot.get_info(url)
 
         # return all the episodes link in a list
@@ -66,6 +70,8 @@ while True:
         # make sure the url inserted
         if url == "":
             url = menu.input_url()
+            bot.get_info(url)
+        else:
             bot.get_info(url)
 
         # get the wanted episodes in number or list
@@ -84,6 +90,9 @@ while True:
         if url == "":
             url = menu.input_url()
             bot.get_info(url)
+        else:
+            bot.get_info(url)
+
 
         menu.print_status(bot)
 
