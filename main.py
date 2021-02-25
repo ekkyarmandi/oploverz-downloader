@@ -1,6 +1,9 @@
 import oploverz
 import menu
 
+bot = oploverz.OPBot()
+url = menu.input_url()
+
 print(
 """
 oploverz.in Series Anime Downloader
@@ -15,9 +18,6 @@ COMMAND WINDOW
 - exit
 """
 )
-
-bot = oploverz.OPBot()
-url = ""
 
 while True:
 
