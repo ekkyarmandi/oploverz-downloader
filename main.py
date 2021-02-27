@@ -1,5 +1,6 @@
 from menu import menu
 from tqdm import tqdm
+import time
 
 menu = menu()
 
@@ -12,6 +13,7 @@ $ da - download all
 $ de - download episodes
 $ se - show episodes
 $ s  - status
+$ a  - activate the browser
 $ exit
 """
 )
@@ -30,6 +32,9 @@ while True:
         episode = menu.episodes[-1]
         episode['link'] = menu.get_link(episode['link'])
         menu.show(episode)
+
+        if menu.browser_status == "active":
+            menu.download(episode['link'])
     
     # download all episodes
     if cmd == "da":
@@ -40,7 +45,12 @@ while True:
             episodes.append(episode)
         
         print()
-        for episode in episodes: menu.show(episode)
+        if menu.browser_status == "active":
+            for episode in episodes:
+                menu.download(episode['link'])
+                menu.show(episode)
+        else:
+            for episode in episodes: menu.show(episode)
     
     # download list of episodes
     if cmd == "de":
@@ -53,7 +63,12 @@ while True:
             req_ep.append(episode)
         
         print()
-        for episode in req_ep: menu.show(episode)
+        if menu.browser_status == "active":
+            for episode in episodes:
+                menu.download(episode['link'])
+                menu.show(episode)
+        else:
+            for episode in episodes: menu.show(episode)
 
     # show all the episodes
     if cmd == "se":
@@ -64,5 +79,8 @@ while True:
         print(menu.status)
         print()
     
+    if cmd == "a":
+        menu.activate_browser()
+
     if cmd == "exit":
         break

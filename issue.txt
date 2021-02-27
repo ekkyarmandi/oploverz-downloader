@@ -1,5 +1,11 @@
 New issue:
 
-1. jika episode didalam anime terlalu sangat banyak, metode get_all yang akan memuat semua data akan menyebabkan proses loading menjadi sangat lama.
+1. link untuk anime one piece tidak bisa diproses dengan sempurna
 
-2. buat daftar anime yang mungkin akan jadi daftar anime yang akan didownload, bisa dimuat dalam bentuk txt.
+2. pertimbangkan untuk menggunakan try-exception didalam program
+
+Ideas:
+
+1. buat daftar anime yang mungkin akan jadi daftar anime yang akan didownload, bisa dimuat dalam bentuk txt.
+
+2. buat opsi untuk mendownload anime langsung melalui browser.
