@@ -1,0 +1,5 @@
+New issue:
+
+1. jika episode didalam anime terlalu sangat banyak, metode get_all yang akan memuat semua data akan menyebabkan proses loading menjadi sangat lama.
+
+2. buat daftar anime yang mungkin akan jadi daftar anime yang akan didownload, bisa dimuat dalam bentuk txt.
