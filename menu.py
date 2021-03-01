@@ -20,7 +20,27 @@ class menu(ZippyBot):
             name = name.title()
             return name
 
-        self.url = input("paste your link below here:\n")
+        print("1 One Piece    : https://www.oploverz.in/series/one-piece-sub-indo/")
+        print("2 SNK S4   : https://www.oploverz.in/series/shingeki-no-kyojin-season-4/")
+        print("3 Re:Zero S2   : https://www.oploverz.in/series/re-zero-kara-hajimeru-isekai-seikatsu-season-2/")
+        print("4 Dr. Stone S2 : https://www.oploverz.in/series/dr-stone-season-2/")
+        print()
+
+        req = input("choose your anime by typing number or paste the link below:\n")
+        
+        try:
+            req = int(req)+1
+            if req == 1:
+                self.url = "https://www.oploverz.in/series/one-piece-sub-indo/"
+            elif req == 2:
+                self.url = "https://www.oploverz.in/series/shingeki-no-kyojin-season-4/"
+            elif req == 3:
+                self.url = "https://www.oploverz.in/series/re-zero-kara-hajimeru-isekai-seikatsu-season-2/"
+            elif req == 4:
+                self.url = "https://www.oploverz.in/series/dr-stone-season-2/"
+        except:
+            self.url = req
+
         self.anime_name = get_anime_name(self.url)
         print("your anime is:", self.anime_name)
         print("loading your anime information..")

@@ -1,11 +1,8 @@
-New issue:
+Isu:
+1. pertimbangkan untuk menggunakan try-exception didalam program
 
-1. link untuk anime one piece tidak bisa diproses dengan sempurna
+Ide:
+- 
 
-2. pertimbangkan untuk menggunakan try-exception didalam program
-
-Ideas:
-
-1. buat daftar anime yang mungkin akan jadi daftar anime yang akan didownload, bisa dimuat dalam bentuk txt.
-
-2. buat opsi untuk mendownload anime langsung melalui browser.
+Fakta:
+1. link untuk anime one piece tidak berjalan dengan baik didalam menu download all (da)
