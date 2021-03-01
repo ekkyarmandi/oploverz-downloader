@@ -29,7 +29,7 @@ class menu(ZippyBot):
         req = input("choose your anime by typing number or paste the link below:\n")
         
         try:
-            req = int(req)+1
+            req = int(req)
             if req == 1:
                 self.url = "https://www.oploverz.in/series/one-piece-sub-indo/"
             elif req == 2:
