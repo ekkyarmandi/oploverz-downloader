@@ -1,4 +1,5 @@
 from zippyshare import ZippyBot
+from pathlib import Path
 from tqdm import tqdm
 import re
 
@@ -97,3 +98,9 @@ class menu(ZippyBot):
     def download(self, download_link):
         
         self.browser.get(download_link)
+
+    def show_dir(self):
+
+        download_folder = Path(Path.home(),"downloads",self.anime_name)
+        print(download_folder)
+

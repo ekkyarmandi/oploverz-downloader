@@ -74,7 +74,7 @@ class ZippyBot():
 
         for script in scripts:
             if self.ext in str(script.contents):
-                dl_link = completor(zippy_url, script)
+                dl_link = completor(zippy_url,script)
                 break
 
         return dl_link

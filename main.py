@@ -12,6 +12,7 @@ $ dl - download latest
 $ da - download all
 $ de - download episodes
 $ se - show episodes
+$ sd - show directory
 $ s  - status
 $ a  - activate the browser
 $ exit
@@ -28,7 +29,7 @@ while True:
         menu.get_all()
     
     # download latest episodes
-    if cmd == "dl":
+    elif cmd == "dl":
         episode = menu.episodes[-1]
         episode['link'] = menu.get_link(episode['link'])
         menu.show(episode)
@@ -37,7 +38,7 @@ while True:
             menu.download(episode['link'])
     
     # download all episodes
-    if cmd == "da":
+    elif cmd == "da":
         episodes = []
         for i in tqdm(range(len(menu.episodes))):
             episode = menu.episodes[i]
@@ -53,7 +54,7 @@ while True:
             for episode in episodes: menu.show(episode)
     
     # download list of episodes
-    if cmd == "de":
+    elif cmd == "de":
         req = menu.download_episodes()
         req_ep = []
 
@@ -71,16 +72,21 @@ while True:
             for episode in episodes: menu.show(episode)
 
     # show all the episodes
-    if cmd == "se":
+    elif cmd == "se":
         for episode in menu.episodes: menu.show(episode)
     
+    # show directory
+    elif cmd == "sd":
+        menu.show_dir()
+        print()
+    
     # show anime status
-    if cmd == "s":
+    elif cmd == "s":
         print(menu.status)
         print()
     
-    if cmd == "a":
+    elif cmd == "a":
         menu.activate_browser()
 
-    if cmd == "exit":
+    elif cmd == "exit":
         break
